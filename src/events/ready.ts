@@ -27,7 +27,7 @@ const ready: IEvent<typeof Events.ClientReady> = {
     ];
 
     setInterval(() => {
-      client.user?.setActivity(activities[randomInt(0, activities.length)]);
+      client.user?.setActivity(activities[randomInt(0, activities.length - 1)]);
     }, (1000 * 60) / 2);
   }
 };
