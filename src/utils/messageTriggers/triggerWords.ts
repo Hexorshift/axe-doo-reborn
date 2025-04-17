@@ -1,0 +1,23 @@
+export default {
+  sus: "SUS? LIKE IN AMONG US????",
+  "real?": "https://cdn.discordapp.com/attachments/900566349250715699/901252442119892992/image0.gif",
+  among: "A M O N G ?",
+  vent: "no more vent in 24 hours. There are too many words with vent in them",
+  stfu: "ok ;w;",
+  shady: "...",
+  amog: "mogus",
+  "dietz nuts": ":moyai:",
+  fortnite: "FORTNITE???",
+  imposter: ":flushed:",
+  bruh: ":moyai:",
+  epic: "games",
+  task: "TAAAAAAAAASKSSS???????????????????????????????",
+  wire: "WIRES????? LIKE IN ELECTRICAL???????",
+  ninja: "https://pbs.twimg.com/media/EINzxGDX0AQzpxB?format=jpg&name=large",
+  owo: "what's this?",
+  "%song": "https://www.youtube.com/watch?v=jrhRz3xF2NI&t=858s",
+  "%help": "`try %christmassong1 and %christmassong2`",
+  Christmas: "https://www.youtube.com/watch?v=V7sG07l9d48",
+  tilted: "at the towers?",
+  "who?": "tao"
+};
