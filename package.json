@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.14.1",
+    "@types/superagent": "^8.1.9",
     "concurrently": "^9.1.2",
     "nodemon": "^3.1.9",
     "tsc-alias": "^1.8.15",
@@ -22,7 +23,7 @@
     "cron": "^4.3.0",
     "discord.js": "^14.18.0",
     "dotenv": "^16.5.0",
-    "openai": "^4.95.1",
-    "readdirp": "^4.1.2"
+    "readdirp": "^4.1.2",
+    "superagent": "^10.2.0"
   }
 }
