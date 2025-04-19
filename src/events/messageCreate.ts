@@ -23,7 +23,7 @@ const ready: IEvent<typeof Events.MessageCreate> = {
           }
         }
 
-        if (message.mentions.has(message.client.user)) {
+        if (message.mentions.has(message.client.user.id)) {
           const messageContent = message.content.toLowerCase().split(" ").join(" ");
 
           if (messageContent.length != 0) {
