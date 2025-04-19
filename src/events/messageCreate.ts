@@ -23,12 +23,8 @@ const ready: IEvent<typeof Events.MessageCreate> = {
           }
         }
 
-        if (message.content.toLowerCase().includes("axe doo")) {
-          const messageContent = message.content
-            .toLowerCase()
-            .split(" ")
-            .filter((word) => word !== "axe" && word !== "doo")
-            .join(" ");
+        if (message.mentions.has(message.client.user)) {
+          const messageContent = message.content.toLowerCase().split(" ").join(" ");
 
           if (messageContent.length != 0) {
             await message.channel.sendTyping();
