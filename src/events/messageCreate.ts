@@ -108,9 +108,22 @@ const messageCreateEvent: IEvent<typeof Events.MessageCreate> = {
 
     const guildId = message.guild?.id || [...AxeDoo.activeStates.keys()][0];
 
-    if (!guildId || !AxeDoo.activeStates.has(guildId)) return;
+    if (message.guild) {
+      if (!guildId || !AxeDoo.activeStates.has(guildId)) return;
 
-    await handleTTS(message, message.content, guildId);
+      const guildMember = await message.guild.members.fetch(message.author.id).catch(() => null);
+      if (!guildMember) return;
+
+      if (!guildMember.voice || (!guildMember.voice.serverMute && !guildMember.voice.selfMute)) {
+        return;
+      }
+
+      await handleTTS(message, message.content, guildId);
+    } else {
+      if (!guildId || !AxeDoo.activeStates.has(guildId)) return;
+
+      await handleTTS(message, message.content, guildId);
+    }
 
     if (message.channel.isSendable()) {
       await handleTriggers(message);
