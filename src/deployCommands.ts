@@ -1,15 +1,12 @@
 import ICommand from "./interfaces/ICommand";
 import { REST, Routes, RESTPostAPIChatInputApplicationCommandsJSONBody } from "discord.js";
-import { config } from "dotenv";
 import { readdirpPromise } from "readdirp";
-
-config();
 
 const deployCommands = async () => {
   try {
     const commands: RESTPostAPIChatInputApplicationCommandsJSONBody[] = [];
     const rest = new REST().setToken(process.env.BOT_TOKEN!);
-    const files = await readdirpPromise("dist/commands");
+    const files = await readdirpPromise("src/commands");
 
     for (const file of files) {
       const { default: command }: { default: ICommand } = await import(file.fullPath);

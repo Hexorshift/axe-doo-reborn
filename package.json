@@ -2,9 +2,9 @@
   "name": "axe-doo-reborn",
   "version": "1.0.0",
   "description": "Axe Doo has been reborn into a bot written in TypeScript.",
-  "main": "dist/app.js",
+  "main": "src/app.ts",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node dist/app.ts",
     "dev": "nodemon .",
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,18 +12,19 @@
   "author": "Hexorshift & Axe",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.15.21",
     "@types/superagent": "^8.1.9",
-    "concurrently": "^9.1.2",
-    "nodemon": "^3.1.9",
-    "tsc-alias": "^1.8.15",
+    "tsc-alias": "^1.8.16",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@discordjs/voice": "^0.18.0",
+    "@types/node-fetch": "^2.6.12",
     "cron": "^4.3.0",
-    "discord.js": "^14.18.0",
-    "dotenv": "^16.5.0",
+    "discord.js": "^14.19.3",
+    "google-tts-api": "^2.0.2",
+    "libsodium-wrappers": "^0.7.15",
     "readdirp": "^4.1.2",
-    "superagent": "^10.2.0"
+    "superagent": "^10.2.1"
   }
 }

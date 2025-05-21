@@ -5,6 +5,8 @@ import { readdirpPromise } from "readdirp";
 
 class AxeDoo extends Client {
   private commands: Collection<string, ICommand>;
+  public trackedUserIds: string[];
+  public activeStates: Map<any, any>;
 
   constructor() {
     super({
@@ -19,6 +21,8 @@ class AxeDoo extends Client {
       partials: [Partials.Channel, Partials.Message]
     });
     this.commands = new Collection();
+    this.trackedUserIds = ["526449871671001098"];
+    this.activeStates = new Map();
   }
 
   getCommands() {
@@ -26,7 +30,7 @@ class AxeDoo extends Client {
   }
 
   async loadEvents() {
-    const files = await readdirpPromise("dist/events");
+    const files = await readdirpPromise("src/events");
 
     for (const file of files) {
       const { default: event }: { default: IEvent } = await import(file.fullPath);
@@ -38,7 +42,7 @@ class AxeDoo extends Client {
   }
 
   async loadCommands() {
-    const files = await readdirpPromise("dist/commands");
+    const files = await readdirpPromise("src/commands");
 
     for (const file of files) {
       const { default: command }: { default: ICommand } = await import(file.fullPath);

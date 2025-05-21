@@ -1,16 +1,35 @@
 import AxeDoo from "./AxeDoo";
 import deployCommands from "./deployCommands";
-import { config } from "dotenv";
+import { getVoiceConnection } from "@discordjs/voice";
 
-config();
-
-(async () => {
+async function main() {
   try {
     await deployCommands();
     await AxeDoo.loadCommands();
     await AxeDoo.loadEvents();
     await AxeDoo.login(process.env.BOT_TOKEN!);
+
+    setupGracefulShutdown();
   } catch (error) {
-    console.log(error);
+    console.error("Bot failed to start:", error);
   }
-})();
+}
+
+async function cleanupVoiceConnections() {
+  for (const [guildId] of AxeDoo.guilds.cache) {
+    const connection = getVoiceConnection(guildId);
+    if (connection) connection.destroy();
+  }
+}
+
+function setupGracefulShutdown() {
+  const shutdown = async () => {
+    await cleanupVoiceConnections();
+    process.exit(0);
+  };
+
+  process.on("SIGINT", shutdown);
+  process.on("SIGTERM", shutdown);
+}
+
+main();
