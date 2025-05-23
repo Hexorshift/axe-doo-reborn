@@ -4,7 +4,8 @@ import { Client } from "discord.js";
 const greetings = (client: Client) => {
   const servers = [
     { serverId: "760697375949324308", channelId: "821035578240794644" },
-    { serverId: "1317642142847336448", channelId: "1330017554604757114" }
+    { serverId: "1317642142847336448", channelId: "1330017554604757114" },
+    { serverId: "893905505544704020", channelId: "893905505544704024" }
   ];
   const greetings = [
     { name: "Good Morning", time: "0 8 * * *", message: "Good Morning chat 🌞" },

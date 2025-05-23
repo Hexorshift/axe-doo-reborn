@@ -4,7 +4,8 @@ import { Client } from "discord.js";
 const cat = (client: Client) => {
   const servers = [
     { serverId: "760697375949324308", channelId: "768530082271592508" },
-    { serverId: "1317642142847336448", channelId: "1330017554604757114" }
+    { serverId: "1317642142847336448", channelId: "1330017554604757114" },
+    { serverId: "893905505544704020", channelId: "893905505544704024" }
   ];
 
   for (const server of servers) {
