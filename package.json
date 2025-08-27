@@ -10,6 +10,7 @@
   "author": "Hexorshift & Axe",
   "license": "ISC",
   "devDependencies": {
+    "@types/bun": "^1.2.21",
     "@types/node": "^22.18.0",
     "@types/superagent": "^8.1.9",
     "tsc-alias": "^1.8.16",

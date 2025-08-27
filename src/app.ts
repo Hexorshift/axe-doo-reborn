@@ -10,6 +10,13 @@ async function main() {
     await AxeDoo.login(process.env.BOT_TOKEN!);
 
     setupGracefulShutdown();
+
+    Bun.serve({
+      port: 3000,
+      routes: {
+        "/": new Response("Hello world!")
+      }
+    });
   } catch (error) {
     console.error("Bot failed to start:", error);
   }
