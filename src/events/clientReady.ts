@@ -6,7 +6,7 @@ import AxeDoo from "../AxeDoo";
 import switchVoiceChannel from "../utils/switchVoiceChannel";
 import { Events, Client, PresenceUpdateStatus, ActivityType, ChannelType } from "discord.js";
 
-const ready: IEvent<typeof Events.ClientReady> = {
+const clientReady: IEvent<typeof Events.ClientReady> = {
   name: Events.ClientReady,
   once: true,
   async execute(client: Client) {
@@ -51,4 +51,4 @@ const ready: IEvent<typeof Events.ClientReady> = {
   }
 };
 
-export default ready;
+export default clientReady;
